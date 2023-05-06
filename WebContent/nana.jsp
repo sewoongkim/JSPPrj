@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-	String cnt_ = request.getParameter("cnt");
+	String cnt_ = request.getParameter("	");
 	int cnt = 100;
 	if (cnt_ != null && !cnt_.equals(""))
 		cnt = Integer.parseInt(cnt_);

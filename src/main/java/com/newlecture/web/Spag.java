@@ -1,6 +1,10 @@
 package com.newlecture.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,9 +33,23 @@ public class Spag extends HttpServlet {
 		//redirect
 		//forward 
 		
+		// List list = new ArrayList(){"1","","test"};
+		
+		String[] names = {"newlec","dragon"};
+		
+		Map<String, Object> notice = new HashMap<String, Object>();
+		notice.put("id",1);
+		notice.put("title","좋아요");
+
+		req.setAttribute("notice",notice);		
+		
+		req.setAttribute("names",names);		
+		
 		req.setAttribute("result", result);
+		
 		RequestDispatcher disPatcher
 			= req.getRequestDispatcher("spag.jsp");
+		
 		disPatcher.forward(req,resp);
 		
 		// super.doGet(req, resp);
